@@ -3,8 +3,11 @@
 # exit if a command fails
 set -e
 
-
 apk update
+
+# set timezone
+apk add -U tzdata
+cp /usr/share/zoneinfo/America/Maceio /etc/localtime
 
 # install pg_dump
 apk add postgresql
