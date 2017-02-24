@@ -62,7 +62,12 @@ fi
 
 echo "Fetching ${LATEST_BACKUP} from S3"
 
-aws s3 cp s3://$S3_BUCKET/$S3_PREFIX/${LATEST_BACKUP} dump.sql.gz
+if [ "${S3_PREFIX}" = "**None**" ]; then
+    aws s3 cp s3://$S3_BUCKET/${LATEST_BACKUP} dump.sql.gz
+else
+    aws s3 cp s3://$S3_BUCKET/$S3_PREFIX/${LATEST_BACKUP} dump.sql.gz
+fi
+
 gzip -d dump.sql.gz
 
 if [ "${DROP_PUBLIC}" == "yes" ]; then
