@@ -53,7 +53,12 @@ POSTGRES_HOST_OPTS="-h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER"
 
 echo "Finding latest backup"
 
-LATEST_BACKUP=$(aws s3 ls s3://$S3_BUCKET/$S3_PREFIX/ | sort | tail -n 1 | awk '{ print $4 }')
+if [ "${S3_PREFIX}" = "**None**" ]; then
+    LATEST_BACKUP=$(aws s3 ls s3://$S3_BUCKET/ | sort | tail -n 1 | awk '{ print $4 }')
+else
+    LATEST_BACKUP=$(aws s3 ls s3://$S3_BUCKET/$S3_PREFIX/ | sort | tail -n 1 | awk '{ print $4 }')
+fi
+
 
 echo "Fetching ${LATEST_BACKUP} from S3"
 
