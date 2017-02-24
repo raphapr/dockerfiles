@@ -18,7 +18,7 @@ postgres:
     POSTGRES_PASSWORD: password
 
 pgbackups3:
-  image: raphapr/postgres-backup-s3
+  image: raphaelpr/postgres-backup-s3
   links:
     - postgres
   environment:
