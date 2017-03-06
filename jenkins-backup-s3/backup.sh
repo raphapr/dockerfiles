@@ -39,6 +39,6 @@ tar -zcvf jenkins_backup.tar.gz $JENKINS_HOME
 
 echo "Uploading jenkins home to $S3_BUCKET"
 
-aws s3 cp jenkins_backup.tar.gz s3://$S3_BUCKET/$(date +"%d-%m-%Y-T-%H:%M:%S").jenkins || exit 2
+aws s3 cp jenkins_backup.tar.gz s3://$S3_BUCKET/$(date +"%d-%m-%Y-T-%H:%M:%S").jenkins.tar.gz || exit 2
 
 echo "Jenkins backup uploaded successfully"
