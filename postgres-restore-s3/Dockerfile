@@ -1,9 +1,6 @@
 FROM alpine:3.4
 MAINTAINER Johannes Schickling "schickling.j@gmail.com"
 
-ADD install.sh install.sh
-RUN sh install.sh && rm install.sh
-
 ENV POSTGRES_DATABASE **None**
 ENV POSTGRES_HOST **None**
 ENV POSTGRES_PORT 5432
@@ -16,7 +13,10 @@ ENV S3_REGION us-west-1
 ENV S3_PATH 'backup'
 ENV DROP_PUBLIC 'no'
 ENV SCHEDULE **None**
-ENV TIMEZONE America/Maceio
+ENV TIMEZONE 'America/Maceio'
+
+ADD install.sh install.sh
+RUN sh install.sh && rm install.sh
 
 ADD run.sh run.sh
 ADD restore.sh restore.sh
