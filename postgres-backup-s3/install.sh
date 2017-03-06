@@ -7,7 +7,7 @@ apk update
 
 # set timezone
 apk add -U tzdata
-cp /usr/share/zoneinfo/America/Maceio /etc/localtime
+cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
 # install pg_dump
 apk add postgresql

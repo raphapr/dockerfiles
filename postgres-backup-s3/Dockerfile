@@ -16,6 +16,7 @@ ENV S3_BUCKET **None**
 ENV S3_REGION us-west-1
 ENV S3_PATH 'backup'
 ENV SCHEDULE **None**
+ENV TIMEZONE America/Maceio
 
 ADD run.sh run.sh
 ADD backup.sh backup.sh

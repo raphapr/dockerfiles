@@ -5,7 +5,8 @@ MAINTAINER Raphael P. Ribeiro "raphaelpr01@gmail.com"
 ADD install.sh install.sh
 RUN sh install.sh && rm install.sh
 
-ENV PATH_TO_BACKUP **None**
+ENV JENKINS_HOME **None**
+ENV TIMEZONE America/Maceio
 ENV S3_ACCESS_KEY_ID **None**
 ENV S3_SECRET_ACCESS_KEY **None**
 ENV S3_BUCKET **None**

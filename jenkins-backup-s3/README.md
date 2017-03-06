@@ -20,8 +20,8 @@ jkbackups3:
     S3_SECRET_ACCESS_KEY: secret
     S3_BUCKET: my-bucket
     S3_PREFIX: backup
-    TIMEZONE: America/Maceio
-    JENKINS_HOME: /var/jenkins_home
+    TIMEZONE: 'America/Maceio'
+    JENKINS_HOME: '/var/jenkins_home'
 ```
 
 ### Automatic Periodic Backups

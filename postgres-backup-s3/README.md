@@ -32,6 +32,7 @@ pgbackups3:
     POSTGRES_USER: user
     POSTGRES_PASSWORD: password
     POSTGRES_EXTRA_OPTS: '--schema=public --blobs'
+    TIMEZONE: 'America/Maceio'
 ```
 
 ### Automatic Periodic Backups
