@@ -23,11 +23,6 @@ if [ "${JENKINS_HOME}" = "**None**" ]; then
   exit 1
 fi
 
-if [ -z "${JENKINS_HOME}" = "**None**" ]; then
-  echo "You need to set the JENKINS_HOME environment variable."
-  exit 1
-fi
-
 if [ ! -d "${JENKINS_HOME}" ]; then
   echo "${JENKINS_HOME} doesn't exist."
   exit 1
