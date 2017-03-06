@@ -28,7 +28,7 @@ if [ -z "${JENKINS_HOME}" = "**None**" ]; then
   exit 1
 fi
 
-if [ -d "${JENKINS_HOME}" ]; then
+if [ ! -d "${JENKINS_HOME}" ]; then
   echo "${JENKINS_HOME} doesn't exist."
   exit 1
 fi
