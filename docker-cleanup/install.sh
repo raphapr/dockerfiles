@@ -9,6 +9,9 @@ apk update
 apk add -U tzdata
 cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
+# install docker
+apk add docker
+
 # install go-cron
 apk add curl
 curl -L --insecure https://github.com/odise/go-cron/releases/download/v0.0.6/go-cron-linux.gz | zcat > /usr/local/bin/go-cron
