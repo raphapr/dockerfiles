@@ -8,6 +8,6 @@ ADD install.sh install.sh
 RUN sh install.sh && rm install.sh
 
 ADD run.sh run.sh
-ADD backup.sh backup.sh
+ADD cleanup.sh cleanup.sh
 
 CMD ["sh", "run.sh"]

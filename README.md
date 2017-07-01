@@ -10,3 +10,4 @@ Collection of ready-to-use docker images
 * **[Tomcat](https://github.com/raphapr/dockerfiles/tree/master/tomcat)** - Tomcat 7 and OpenJDK 6
 * **[postgres-backup-s3](https://github.com/raphapr/dockerfiles/tree/master/postgres-backup-s3)** - Backup PostgreSQL to S3
 * **[postgres-restore-s3](https://github.com/raphapr/dockerfiles/tree/master/postgres-restore-s3)** - Restore PostgreSQL to S3
+* **[docker-cleanup](https://github.com/raphapr/dockerfiles/tree/master/docker-cleanup)** - Periodically clean up docker garbage
