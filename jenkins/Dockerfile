@@ -1,4 +1,4 @@
-FROM jenkins:2.32.2
+FROM jenkins:2.60.1
 MAINTAINER Raphael P. Ribeiro
 
 USER root
