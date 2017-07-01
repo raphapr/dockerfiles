@@ -6,7 +6,7 @@ It will periodically clean up exited containers and remove images and volumes th
 
 Docker:
 ```sh
-$ docker run -v /var/run/docker.sock:/var/run/docker.sock -e SCHEDULE=@daily raphaelpr/postgres-backup-s3
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -e SCHEDULE=@daily raphaelpr/postgres-backup-s3
 ```
 
 ### Automatic Periodic Backups
