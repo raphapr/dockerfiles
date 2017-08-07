@@ -28,7 +28,7 @@ RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A170311380
 RUN \curl -sSL https://get.rvm.io | sed -E s/\_rvm\_print\_headline/\_rvm\_version/ | bash -s stable --autolibs=enable --ruby=2.2.5
 RUN /bin/bash -l -c "rvm --default use ruby-2.2.5"
 RUN /bin/bash -l -c "rvm @global do gem install bundler"
-RUN usermod -G rvm jenkins
+RUN usermod -a -G rvm,docker jenkins
 #RUN /bin/bash -l -c "echo 'source /etc/profile.d/rvm.sh' >> $JENKINS_HOME/.bashrc"
 
 USER jenkins
