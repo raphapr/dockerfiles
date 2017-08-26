@@ -1,4 +1,4 @@
-FROM jenkins:2.60.2
+FROM jenkins/jenkins:lts
 MAINTAINER Raphael P. Ribeiro
 
 USER root
@@ -14,6 +14,9 @@ RUN apt-get install -y libpq-dev libqt4-dev postgresql
 # java building
 RUN apt-get install -y maven
 
+# rm cache
+RUN apt-get clean all
+
 # docker inside docker
 RUN groupadd -g 118 docker
 RUN usermod -a -G docker jenkins
@@ -24,11 +27,11 @@ RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 #RUN adduser jenkins rvm
 
 # install RVM, Ruby, and Bundler
-RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+RUN gpg --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 RUN \curl -sSL https://get.rvm.io | sed -E s/\_rvm\_print\_headline/\_rvm\_version/ | bash -s stable --autolibs=enable --ruby=2.2.5
 RUN /bin/bash -l -c "rvm install ruby-2.4.1"
 RUN /bin/bash -l -c "rvm --default use ruby-2.2.5"
-RUN /bin/bash -l -c "rvm @global do gem install bundler"
+RUN /bin/bash -l -c "rvm all do gem install bundle"
 RUN usermod -a -G rvm,docker jenkins
 #RUN /bin/bash -l -c "echo 'source /etc/profile.d/rvm.sh' >> $JENKINS_HOME/.bashrc"
 
